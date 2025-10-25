@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost & Found Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lost & Found Portal</h1>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('viewItems')">View Items</button>
+            <button class="tab-button" onclick="showTab('postItem')">Post New Item</button>
+        </div>
+
+        <!-- View Items Tab -->
+        <div id="viewItems" class="tab-content active">
+            <h2>Items Reported</h2>
+            <div id="items-list" class="items-grid">
+                <!-- Items will be loaded here by JavaScript -->
+                <p>Loading items...</p>
+            </div>
+        </div>
+
+        <!-- Post New Item Tab -->
+        <div id="postItem" class="tab-content">
+            <h2>Post a New Item</h2>
+            <form id="post-form">
+                <div class="form-group">
+                    <label for="post-password">Admin Password (Required to post):</label>
+                    <input type="password" id="post-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="type">Type:</label>
+                    <select id="type" required>
+                        <option value="">-- Select --</option>
+                        <option value="Lost">Lost</option>
+                        <option value="Found">Found</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="itemName">Item Name:</label>
+                    <input type="text" id="itemName" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location (where lost/found):</label>
+                    <input type="text" id="location" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactInfo">Contact Information:</label>
+                    <input type="text" id="contactInfo" required>
+                </div>
+                <div class="form-group">
+                    <label for="imageFile">Image File (Optional):</label>
+                    <input type="file" id="imageFile" accept="image/*">
+                    <small>Upload an image file directly. Max size ~20MB.</small>
+                </div>
+                <button type="submit">Submit</button>
+                <p id="post-status"></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
